@@ -12,9 +12,10 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.css$/, loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader') },
+      { test: /\.less$/, loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader!less-loader') },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: '/img/[name].[hash:7].[ext]',
@@ -22,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: '/fonts/[name].[hash:7].[ext]',
