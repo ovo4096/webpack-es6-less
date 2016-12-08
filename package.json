@@ -7,10 +7,11 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.14.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
