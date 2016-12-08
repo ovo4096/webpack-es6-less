@@ -1,1 +1,3 @@
-console.log('hello');
+let foo = () => { console.log('hello'); };
+
+foo();

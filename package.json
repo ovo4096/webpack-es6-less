@@ -7,6 +7,9 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.9",
+    "babel-preset-latest": "^6.16.0",
     "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.14.0"
   },
