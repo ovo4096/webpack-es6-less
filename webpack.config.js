@@ -1,22 +1,23 @@
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: './dist',
     filename: 'app.bundle.js',
   },
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.css$/, loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader') },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: path.resolve(__dirname, 'dist/', '/img/[name].[hash:7].[ext]'),
+          name: '/img/[name].[hash:7].[ext]',
         },
       },
       {
@@ -24,7 +25,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: path.resolve(__dirname, 'dist/', '/fonts/[name].[hash:7].[ext]'),
+          name: '/fonts/[name].[hash:7].[ext]',
         },
       },
     ],
@@ -33,9 +34,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
+    new ExtractTextWebpackPlugin('style.css'),
   ],
   devServer: {
-    // contentBase: path.resolve(__dirname, 'dist/'),
     open: true,
     inline: true,
     progress: true,
