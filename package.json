@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
