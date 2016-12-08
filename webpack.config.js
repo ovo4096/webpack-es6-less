@@ -31,8 +31,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, 'dist/', 'index.html'),
-      template: path.resolve(__dirname, 'index.html'),
+      template: 'index.html',
     }),
   ],
+  devServer: {
+    // contentBase: path.resolve(__dirname, 'dist/'),
+    open: true,
+    inline: true,
+    progress: true,
+    port: 8080,
+  },
 };
