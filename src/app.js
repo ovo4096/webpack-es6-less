@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+
 let foo = () => { console.log('hello'); };
 
 foo();
