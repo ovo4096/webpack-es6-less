@@ -1,4 +1,8 @@
-import 'bootstrap/less/bootstrap.less';
+import './assets/my-bootstrap.less';
+import jQuery from 'jquery';
+
+window.jQuery = jQuery;
+require('bootstrap/js/modal');
 
 let foo = () => { console.log('hello'); };
 
